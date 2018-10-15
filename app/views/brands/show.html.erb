@@ -1,0 +1,19 @@
+<%= image_tag @brand.image, alt: @brand.name, class: 'sneakerShow' %>
+
+<br>
+<h2><%= @brand.name %> Sneakers</h2>
+
+<br>
+
+
+
+<ul>
+  <% @brand.sneakers.each do |sneaker|%>
+  <li>
+    <%= image_tag sneaker.image, alt: sneaker.silhouette, class: 'sneakerGrid' %> <br>
+    <%= link_to sneaker.name, sneaker_path(sneaker.id) %> <br>
+  </li>
+  <% end %>
+</ul>
+
+<br>

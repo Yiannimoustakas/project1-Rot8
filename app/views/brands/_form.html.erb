@@ -1,0 +1,30 @@
+<% if flash[:errors].present? %>
+  <strong>Please correct the following errors in the form:</strong>
+  <ol>
+    <% flash[:errors].each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @brand do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :founded %>
+  <%= f.text_field :founded %>
+  <br>
+  <%= f.label :ceo %>
+  <%= f.text_field :ceo %>
+  <br>
+  <%= f.label :hq %>
+  <%= f.text_field :hq %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>

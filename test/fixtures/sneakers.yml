@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  silhouette: MyText
+  colorway: MyText
+  released: MyText
+  retail_price: MyText
+  image: MyText
+  brand_id: 1
+
+two:
+  name: MyText
+  silhouette: MyText
+  colorway: MyText
+  released: MyText
+  retail_price: MyText
+  image: MyText
+  brand_id: 1

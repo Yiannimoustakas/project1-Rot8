@@ -1,0 +1,16 @@
+<h2>All Rotates</h2>
+
+<ul>
+  <% @rotates.each do |rotate| %>
+    <li>
+      <%= link_to rotate.name, rotate_path(rotate.id) %>
+      (<%= rotate.user.name %>)
+    </li>
+      <% rotate.sneakers.each do |sneaker| %>
+
+      <%= image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid' %>
+
+    </li>
+      <% end %>
+  <% end %>
+</ul>

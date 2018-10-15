@@ -1,0 +1,17 @@
+<h2>All Brands</h2>
+<% if @current_user.present? %>
+<%= link_to 'Add New Brand', new_brand_path %>
+<% end %>
+
+<ul>
+  <div class="grid-container">
+    <% @brand.each do |brand| %>
+    <div class="grid-item">
+      <li>
+        <%= link_to (image_tag brand.image, alt: brand.name, class: 'sneakerGrid'), brand_path(brand.id) %><br>
+        <%= link_to brand.name, brand_path(brand.id) %>
+      </li>
+    </div>
+    <% end %>
+  </div>
+</ul>

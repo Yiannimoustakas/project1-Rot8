@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <h1>Project 1: RoT8</h1>
+    <nav>
+      <% if @current_user.present? %>
+        Welcome, <%= @current_user.name %>
+        |
+        <%= link_to 'Logout', login_path, method: 'delete' %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        |
+        <%= link_to 'Sign Up', new_user_path %>
+      <% end %>
+      |
+      <%= link_to 'Brands', brands_path %>
+      |
+      <%= link_to 'Sneakers', sneakers_path %>
+      |
+      <%= link_to "RoT8s", rotates_path %>
+    </nav>
+    <hr>
     <%= yield %>
   </body>
 </html>

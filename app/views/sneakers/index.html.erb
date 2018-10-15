@@ -1,0 +1,18 @@
+<h2>All Shoes</h2>
+<% if @current_user.present? %>
+<%= link_to 'Add New Sneaker', new_sneaker_path %>
+<% end %>
+
+<ul>
+  <div class="grid-container">
+    <% @sneaker.each do |sneaker| %>
+    <div class="grid-item">
+      <li>
+        <%= link_to (image_tag sneaker.image, alt: sneaker.silhouette, class: 'sneakerGrid'), sneaker_path(sneaker.id) %> <br>
+        <%= link_to sneaker.brand.name, brand_path(sneaker.brand_id) %> <br>
+        <%= link_to sneaker.name, sneaker_path(sneaker.id) %> <br>
+      </li>
+    </div>
+    <% end %>
+  </div>
+</ul>

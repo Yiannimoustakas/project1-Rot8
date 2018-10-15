@@ -1,0 +1,18 @@
+<h2><%= @sneaker.name %></h2>
+
+Brand: <%= link_to @sneaker.brand.name, brand_path(@sneaker.brand.id) %>
+<br>
+
+<%= @sneaker.name%>
+<br>
+
+<%= image_tag @sneaker.image, alt: @sneaker.silhouette, class: 'sneakerShow' %>
+
+
+
+<br>
+
+<% if @current_user.present? %>
+<%= link_to 'Edit Sneaker', edit_sneaker_path(@sneaker.id) %><br>
+<%= link_to 'Delete Sneaker', sneaker_path(@sneaker), method: 'delete' %>
+<% end %>

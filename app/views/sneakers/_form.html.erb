@@ -1,0 +1,35 @@
+<% if flash[:errors].present? %>
+  <strong>Please correct the following errors in the form:</strong>
+  <ol>
+    <% flash[:errors].each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @sneaker do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :silhouette %>
+  <%= f.text_field :silhouette %>
+  <br>
+  <%= f.label :colorway %>
+  <%= f.text_field :colorway %>
+  <br>
+  <%= f.label :released %>
+  <%= f.text_field :released %>
+  <br>
+  <%= f.label :retail_price %>
+  <%= f.text_field :retail_price %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <%= f.label :brand_id %>
+  <%= f.collection_select :brand_id, Brand.all, :id, :name, prompt: "Select Brand" %>
+  <br>
+  <%= f.submit %>
+<% end %>

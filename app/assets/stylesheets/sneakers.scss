@@ -1,0 +1,44 @@
+// Place all the styles related to the sneakers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: helvetica;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+  margin-right: 3%;
+}
+
+nav {
+  background-color: red;
+}
+
+.sneakerShow {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+.sneakerGrid {
+  max-width: 150px;
+  max-height: 100px;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: auto auto auto;
+  justify-content: center;
+}
+
+.grid-item {
+  padding: 2px;
+  text-align: center;
+}
