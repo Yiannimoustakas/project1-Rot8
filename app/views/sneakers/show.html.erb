@@ -5,11 +5,15 @@ Brand: <%= link_to @sneaker.brand.name, brand_path(@sneaker.brand.id) %>
 
 <%= @sneaker.name%>
 <br>
+<br>
+<%= link_to "BACK TO SNEAKERS", sneakers_path %>
+<br>
 
 <%= image_tag @sneaker.image, alt: @sneaker.silhouette, class: 'sneakerShow' %>
-
-
-
+<p>Silhouette: "<%= @sneaker.silhouette %>"</p>
+<p>Colorway: <%= @sneaker.colorway %></p>
+<p>Released: <%= @sneaker.released %></p>
+<p>Retail: $<%= @sneaker.retail_price %></p>
 <br>
 
 <% if @current_user.present? %>

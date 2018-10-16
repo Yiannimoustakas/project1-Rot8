@@ -1,5 +1,9 @@
 <h2>RoT8's</h2>
 
+<% if @current_user.present? %>
+<%= link_to 'Create New RoT8', new_rotate_path %>
+<% end %>
+
 <ul>
   <% @rotates.each do |rotate| %>
     <li>
@@ -10,7 +14,7 @@
 
       <%= image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid' %>
 
-    </li>
+  
       <% end %>
   <% end %>
 </ul>

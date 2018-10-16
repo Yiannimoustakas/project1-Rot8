@@ -8,28 +8,37 @@
     <% end %>
   </ol>
 <% end %>
-
-<%= form_for @sneaker do |f| %>
+<div class="form-group">
+  <%= form_for @sneaker, html: {multipart: true} do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <br>
   <br>
   <%= f.label :silhouette %>
-  <%= f.text_field :silhouette %>
+  <%= f.text_field :silhouette, class: "form-control" %>
+  <br>
   <br>
   <%= f.label :colorway %>
-  <%= f.text_field :colorway %>
+  <%= f.text_field :colorway, class: "form-control" %>
+  <br>
   <br>
   <%= f.label :released %>
-  <%= f.text_field :released %>
+  <%= f.text_field :released, class: "form-control" %>
+  <br>
   <br>
   <%= f.label :retail_price %>
-  <%= f.text_field :retail_price %>
+  <%= f.text_field :retail_price, class: "form-control" %>
+  <br>
   <br>
   <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.cl_image_upload :image, class: "form-control" %>
+  <br>
   <br>
   <%= f.label :brand_id %>
-  <%= f.collection_select :brand_id, Brand.all, :id, :name, prompt: "Select Brand" %>
+  <%= f.collection_select :brand_id, Brand.all, :id, :name, prompt: "Select Brand", class: "form-control" %>
+  <br>
   <br>
   <%= f.submit %>
-<% end %>
+  <% end %>
+
+</div>

@@ -9,22 +9,26 @@
   </ol>
 <% end %>
 
-<%= form_for @brand do |f| %>
+<div class="form-group">
+
+  <%= form_for @brand do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "form-control" %>
   <br>
   <%= f.label :founded %>
-  <%= f.text_field :founded %>
+  <%= f.text_field :founded, class: "form-control" %>
   <br>
   <%= f.label :ceo %>
-  <%= f.text_field :ceo %>
+  <%= f.text_field :ceo, class: "form-control" %>
   <br>
   <%= f.label :hq %>
-  <%= f.text_field :hq %>
+  <%= f.text_field :hq, class: "form-control", class: "form-control" %>
   <br>
   <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.text_field :image, class: "form-control" %>
   <br>
   <br>
-  <%= f.submit %>
-<% end %>
+  <%= f.submit class: "btn-primary, btn-lg" %>
+  <% end %>
+
+</div>

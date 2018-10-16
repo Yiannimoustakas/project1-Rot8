@@ -19,5 +19,6 @@ Created by <%= @rotate.user.name %>
 </ul>
 
 <% if @current_user.present? && @rotate.user == @current_user %>
-<%= link_to 'Edit Rotate', edit_rotate_path(@rotate.id) %>
+<%= link_to 'Edit Rotate', edit_rotate_path(@rotate.id) %> <br>
+<%= link_to 'Delete Rotate', rotate_path(@rotate.id), method: 'delete' %>
 <% end %>

@@ -13,9 +13,45 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+  <ul>
+  <% @sneakers.each do |sneaker| %>
+    <li><%= check_box_tag "sneakers[]", sneaker.id, false, id:sneaker.id %>
+    <%= label_tag sneaker.id, "#{sneaker.name}" %></li>
+  <% end %>
+  </ul>
   <br>
   <br>
   <%= f.submit %>
 <% end %>
+
+
+
+
+<!-- <%= form_for @rotate do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 1" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 2" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 3" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 4" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 5" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 6" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <%= f.label :sneakers, "Sneaker 7" %>
+  <%= f.collection_select :sneakers, Sneaker.all, :id, :name, prompt: "Select Sneaker" %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %> -->

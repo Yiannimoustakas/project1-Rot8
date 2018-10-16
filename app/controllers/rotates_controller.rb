@@ -4,6 +4,7 @@ class RotatesController < ApplicationController
 
   def new
     @rotate = Rotate.new
+    @sneakers = Sneaker.all
   end
 
   def create
@@ -11,9 +12,12 @@ class RotatesController < ApplicationController
     @rotate.user = @current_user
     @rotate.save
 
-
+    # raise 'hell'
 
     if @rotate.persisted?
+      @rotate.sneakers << Sneaker.find(params[:sneakers])
+      @rotate.save
+      # raise "hell"
       redirect_to rotates_path
     else
       flash[:errors] = @rotate.errors.full_messages
@@ -60,7 +64,7 @@ class RotatesController < ApplicationController
 
   private
   def rotate_params
-    params.require(:rotate).permit(:name)
+    params.require(:rotate).permit(:name, :sneaker_id)
   end
 
 end

@@ -1,0 +1,18 @@
+<h2>Your Profile</h2>
+<% if @current_user.present? %>
+<%= link_to 'Edit Your Profile', edit_user_path(@current_user.id) %><br>
+<%= link_to "New RoT8" , new_rotate_path %>
+<% end %>
+
+<ul>
+  <% @user.rotates.each do |rotate| %>
+  <li>
+    <%= link_to rotate.name, rotate_path(rotate.id) %>
+    (<%= rotate.user.name %>)
+  </li>
+
+    <% rotate.sneakers.each do |sneaker| %>
+      <%= link_to (image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid'), sneaker_path(sneaker.id) %>
+    <% end %>
+  <% end %>
+</ul>

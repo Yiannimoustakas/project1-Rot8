@@ -1,0 +1,27 @@
+<% if flash[:errors].present? %>
+  <strong>Please correct the following errors in the form:</strong>
+  <ol>
+    <% flash[:errors].each do |error| %>
+      <li>
+        <%= error %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
+<% form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <br>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <br>
+  <%= f.label :password_confirmation %>
+  <%= f.text_field :password_confirmation %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>

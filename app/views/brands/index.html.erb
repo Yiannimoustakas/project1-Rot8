@@ -8,8 +8,7 @@
     <% @brand.each do |brand| %>
     <div class="grid-item">
       <li>
-        <%= link_to (image_tag brand.image, alt: brand.name, class: 'sneakerGrid'), brand_path(brand.id) %><br>
-        <%= link_to brand.name, brand_path(brand.id) %>
+        <%= link_to (image_tag brand.image, alt: brand.name, class: 'sneakerGrid'), brand_path(brand.id) %>
       </li>
     </div>
     <% end %>

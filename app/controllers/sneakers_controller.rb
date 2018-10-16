@@ -4,8 +4,13 @@ class SneakersController < ApplicationController
   end
 
   def create
-    Sneaker.create sneaker_params #pass in the string version of the form params
-    redirect_to(sneakers_path)
+    @sneaker = Sneaker.new(sneaker_params)
+    if params[:file].present?
+      response = Cloudinary::Uploader.upload params[:file]
+      @sneaker.image = response["public_id"]
+    end
+    @sneaker.save
+    redirect_to @sneaker, notice: 'Sneaker was successfully created'
   end
 
   def index

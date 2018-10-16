@@ -1,19 +1,26 @@
+<%= link_to "BACK TO BRANDS", brands_path %> <br><br>
 <%= image_tag @brand.image, alt: @brand.name, class: 'sneakerShow' %>
 
 <br>
-<h2><%= @brand.name %> Sneakers</h2>
+<p>Founded: <%= @brand.founded %></p>
+<p>CEO: <%= @brand.ceo %></p>
+<p>Headquarters: <%= @brand.hq %></p>
+
 
 <br>
 
 
-
 <ul>
-  <% @brand.sneakers.each do |sneaker|%>
-  <li>
-    <%= image_tag sneaker.image, alt: sneaker.silhouette, class: 'sneakerGrid' %> <br>
-    <%= link_to sneaker.name, sneaker_path(sneaker.id) %> <br>
-  </li>
-  <% end %>
+  <div class="grid-container">
+    <% @brand.sneakers.each do |sneaker|%>
+    <div class="grid-item">
+      <li>
+        <%= link_to (image_tag sneaker.image, alt: sneaker.silhouette, class: 'sneakerGrid'), sneaker_path(sneaker.id) %> <br>
+        <%= link_to sneaker.name, sneaker_path(sneaker.id) %> <br>
+      </li>
+    </div>
+    <% end %>
+  </div>
 </ul>
 
 <br>

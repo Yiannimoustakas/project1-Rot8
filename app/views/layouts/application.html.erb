@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </head>
 
   <body>
@@ -14,6 +15,8 @@
     <nav>
       <% if @current_user.present? %>
         Welcome, <%= @current_user.name %>
+        |
+        <%= link_to "Profile", user_path(@current_user.id) %>
         |
         <%= link_to 'Logout', login_path, method: 'delete' %>
       <% else %>
