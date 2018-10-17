@@ -14,10 +14,14 @@
   <%= f.text_field :name %>
   <br>
   <ul>
-  <% @sneakers.each do |sneaker| %>
-    <li><%= check_box_tag "sneakers[]", sneaker.id, false, id:sneaker.id %>
-    <%= label_tag sneaker.id, "#{sneaker.name}" %></li>
-  <% end %>
+    <div class="grid-container">
+      <% @sneakers.each do |sneaker| %>
+      <div class="grid-item">
+        <li><%= cl_image_tag sneaker.image, class: "addToRotate" %> <br> <%= check_box_tag "sneakers[]", sneaker.id, false, id:sneaker.id %>
+        <%= label_tag sneaker.id, "#{sneaker.name}" %></li>
+      </div>
+      <% end %>
+    </div>
   </ul>
   <br>
   <br>

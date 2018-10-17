@@ -3,7 +3,7 @@
 "<%= @rotate.name%>"
 
 <br>
-Created by <%= @rotate.user.name %>
+Created by <%= link_to @rotate.user.name, user_path(@rotate.user) %>
 <br>
 <ul>
   <div class="grid-container">

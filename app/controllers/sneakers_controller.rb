@@ -20,6 +20,10 @@ class SneakersController < ApplicationController
   def show
     @sneaker = Sneaker.find params[:id]
   end
+  
+  def edit
+    @sneaker = Sneaker.find params[:id]
+  end
 
   def update
     @sneaker = Sneaker.find params[:id]
@@ -31,10 +35,6 @@ class SneakersController < ApplicationController
       flash[:errors] = @sneaker.errors.full_messages
       render :edit
     end
-  end
-
-  def edit
-    @sneaker = Sneaker.find params[:id]
   end
 
   def destroy

@@ -12,26 +12,36 @@
 
   <body>
     <h1>Project 1: RoT8</h1>
-    <nav>
+    <ul class="nav nav-tabs">
       <% if @current_user.present? %>
-        Welcome, <%= @current_user.name %>
-        |
-        <%= link_to "Profile", user_path(@current_user.id) %>
-        |
-        <%= link_to 'Logout', login_path, method: 'delete' %>
+        <li class="nav-item">
+          Welcome, <%= @current_user.name %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Profile", user_path(@current_user.id) %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Logout', login_path, method: 'delete' %>
+        </li>
       <% else %>
-        <%= link_to 'Login', login_path %>
-        |
-        <%= link_to 'Sign Up', new_user_path %>
+        <li class="nav-item">
+          <%= link_to 'Login', login_path %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_path %>
+        </li>
       <% end %>
-      |
-      <%= link_to 'Brands', brands_path %>
-      |
-      <%= link_to 'Sneakers', sneakers_path %>
-      |
-      <%= link_to "RoT8s", rotates_path %>
-    </nav>
-    <hr>
+      <li class="nav-item">
+        <%= link_to 'Brands', brands_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sneakers', sneakers_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "RoT8s", rotates_path %>
+      </li>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

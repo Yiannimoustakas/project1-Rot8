@@ -1,14 +1,15 @@
-<h2>Your Profile</h2>
-<% if @current_user.present? %>
+<h2><%= @user.name %>'s Profile</h2> <%= cl_image_tag @user.image, class: 'profilePic' %> <br>
+<% if @current_user.present? && @current_user == @user %>
 <%= link_to 'Edit Your Profile', edit_user_path(@current_user.id) %><br>
 <%= link_to "New RoT8" , new_rotate_path %>
 <% end %>
+<br>
+<br>
 
 <ul>
   <% @user.rotates.each do |rotate| %>
   <li>
     <%= link_to rotate.name, rotate_path(rotate.id) %>
-    (<%= rotate.user.name %>)
   </li>
 
     <% rotate.sneakers.each do |sneaker| %>

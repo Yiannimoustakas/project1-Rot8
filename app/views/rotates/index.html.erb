@@ -3,18 +3,20 @@
 <% if @current_user.present? %>
 <%= link_to 'Create New RoT8', new_rotate_path %>
 <% end %>
+<br>
+<br>
 
 <ul>
   <% @rotates.each do |rotate| %>
     <li>
       <%= link_to rotate.name, rotate_path(rotate.id) %>
-      (<%= rotate.user.name %>)
+      (<%= link_to rotate.user.name, user_path(rotate.user) %>)
     </li>
       <% rotate.sneakers.each do |sneaker| %>
 
       <%= image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid' %>
 
-  
+
       <% end %>
   <% end %>
 </ul>

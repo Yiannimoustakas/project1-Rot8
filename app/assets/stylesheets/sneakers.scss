@@ -22,6 +22,11 @@ nav {
   background-color: red;
 }
 
+.addToRotate {
+  max-width: 150px;
+  max-height: 50px;
+}
+
 .sneakerShow {
   max-width: 400px;
   max-height: 300px;
@@ -42,4 +47,9 @@ nav {
 .grid-item {
   padding: 2px;
   text-align: center;
+}
+
+.profilePic {
+  max-width: 200px;
+  max-height: 100px;
 }
