@@ -15,12 +15,16 @@ class SneakersController < ApplicationController
 
   def index
     @sneaker = Sneaker.all
+    if params[:search]
+      @search_term = params[:search]
+      @sneaker = @sneaker.search_by(@search_term)
+    end
   end
 
   def show
     @sneaker = Sneaker.find params[:id]
   end
-  
+
   def edit
     @sneaker = Sneaker.find params[:id]
   end

@@ -28,6 +28,12 @@ class RotatesController < ApplicationController
 
   def index
     @rotates = Rotate.all
+    if params[:search]
+      @search_term = params[:search]
+      @rotates = @rotates.search_by(@search_term)
+      # show all results of all sneakers that are in a rotate:
+      # Sneaker.joins(:rotates).where("sneakers.name ILIKE ?", "#{@search_term}%");
+    end
   end
 
   def show

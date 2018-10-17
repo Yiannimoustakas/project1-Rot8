@@ -6,6 +6,12 @@
 <br>
 <br>
 
+<p><strong>Refine Your Search:</strong></p>
+
+<%= form_for "",url: rotates_path, role: "search", method: :get do %>
+<%= text_field_tag :search, @search_term, placeholder: "Search" %>
+<% end %>
+
 <ul>
   <% @rotates.each do |rotate| %>
     <li>
