@@ -13,16 +13,29 @@
 <% end %>
 
 <ul>
+
   <% @rotates.each do |rotate| %>
+  <div class="rotate-container">
     <li>
       <%= link_to rotate.name, rotate_path(rotate.id) %>
-      (<%= link_to rotate.user.name, user_path(rotate.user) %>)
+      (<%= link_to rotate.user.name, user_path(rotate.user.id) %>)
+      
+      <%= link_to like_rotate_path(rotate), class: 'like', method: :put do %>
+      <button type="button" class="btn btn-info" aria-label="Left Align">
+        <span class="badge glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true">+1 |</span>
+        <span class="badge"><%= rotate.get_upvotes.size %> </span>
+      </button>
+      <% end %>
+     <%= link_to unlike_rotate_path(rotate), class: 'like', method: :put do %>
+      <button type="button" class="btn btn-info" aria-label="Left Align">
+        <span class="badge glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true">-1 |</span>
+        <span class="badge"><%= rotate.get_downvotes.size %> </span>
+      </button>
+      <% end %>
     </li>
       <% rotate.sneakers.each do |sneaker| %>
-
-      <%= image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid' %>
-
-
-      <% end %>
+        <%= image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid' %>
+        <% end %>
+      </div>
   <% end %>
 </ul>

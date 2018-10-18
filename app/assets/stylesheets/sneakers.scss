@@ -53,3 +53,22 @@ nav {
   max-width: 200px;
   max-height: 100px;
 }
+
+.like:hover {
+  text-decoration: none;
+}
+
+.right {
+  text-align: right;
+  display: inline-block;
+  color: red;
+}
+
+.right:hover {
+  color: rgb(173, 16, 6);
+}
+
+.rotate-container {
+  padding: 50px;
+  border: bold 1px black;
+}

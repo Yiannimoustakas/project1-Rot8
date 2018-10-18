@@ -8,12 +8,27 @@
 
 <ul>
   <% @user.rotates.each do |rotate| %>
+  <div class="rotate-container">
   <li>
     <%= link_to rotate.name, rotate_path(rotate.id) %>
+    (<%= rotate.user.name %>)
+    <%= link_to like_rotate_path(rotate), class: 'like', method: :put do %>
+    <button type="button" class="btn btn-info" aria-label="Left Align">
+      <span class="badge glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true">+1 |</span>
+      <span class="badge"><%= rotate.get_upvotes.size %> </span>
+    </button>
+    <% end %>
+   <%= link_to unlike_rotate_path(rotate), class: 'like', method: :put do %>
+    <button type="button" class="btn btn-info" aria-label="Left Align">
+      <span class="badge glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true">-1 |</span>
+      <span class="badge"><%= rotate.get_downvotes.size %> </span>
+    </button>
+    <% end %>
   </li>
 
     <% rotate.sneakers.each do |sneaker| %>
       <%= link_to (image_tag sneaker.image, alt: sneaker.name, class: 'sneakerGrid'), sneaker_path(sneaker.id) %>
     <% end %>
+    </div>
   <% end %>
 </ul>

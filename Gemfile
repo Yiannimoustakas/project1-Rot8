@@ -56,9 +56,26 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# allows pry to be the main console
 gem 'pry-rails'
+
+# byebug will show pry in the browser
 gem 'pry-byebug'
+
+# allows use of jquery
 gem 'jquery-rails'
+
+# cloudinary is our way of storing photos on the cloudinary server
 gem 'cloudinary'
+
+# allows use of bootstrap
 gem 'bootstrap', '~> 4.1.3'
+
+# I forget what this does
 gem 'rails_12factor', group: :production
+
+# this gem is to allow models to be upvoted
+gem 'acts_as_votable', '~> 0.11.1'
+
+# Allowed me to dump file from my local server into my seeds file
+gem 'seed_dump'

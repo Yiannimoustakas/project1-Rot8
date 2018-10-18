@@ -18,7 +18,7 @@
     <div class="grid-container">
       <% @sneakers.each do |sneaker| %>
       <div class="grid-item">
-        <li><%= cl_image_tag sneaker.image, class: "addToRotate" %> <br> <%= check_box_tag "sneakers[]", sneaker.id, false, id:sneaker.id %>
+        <li><%= cl_image_tag sneaker.image, class: "addToRotate" %> <br> <%= check_box_tag "sneakers[]", sneaker.id, false, id:sneaker.id %> <br>
         <%= label_tag sneaker.id, "#{sneaker.name}" %></li>
       </div>
       <% end %>
